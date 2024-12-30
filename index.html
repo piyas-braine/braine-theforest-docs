@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation Of Braine Startup Portfolio Website Template</title>
+
+    <style>
+        /* Base Styles */
+        *,
+        html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            color: coral;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Width */
+        .w-100 {
+            width: 100%;
+        }
+
+        .w-80 {
+            width: 80%;
+        }
+
+        .w-70 {
+            width: 70%;
+        }
+
+        .w-60 {
+            width: 60%;
+        }
+
+        .w-50 {
+            width: 50%;
+        }
+
+        .w-25 {
+            width: 25%;
+        }
+
+        .w-20 {
+            width: 20%;
+        }
+
+        /* Margin */
+        .mx-3 {
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+
+        .mx-4 {
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+
+        .mx-5 {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .mx-6 {
+            margin-left: 24px;
+            margin-right: 24px;
+        }
+
+        .mt-3 {
+            margin-top: 12px;
+        }
+
+        .mt-4 {
+            margin-top: 16px;
+        }
+
+        .mt-5 {
+            margin-top: 20px;
+        }
+
+        .mt-6 {
+            margin-top: 24px;
+        }
+
+        /* Padding */
+        .px-3 {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        .px-4 {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .px-5 {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .px-6 {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .pt-3 {
+            padding-top: 12px;
+        }
+
+        .pt-4 {
+            padding-top: 16px;
+        }
+
+        .pt-5 {
+            padding-top: 20px;
+        }
+
+        .pt-6 {
+            padding-top: 24px;
+        }
+
+        .pb-3 {
+            padding-bottom: 12px;
+        }
+
+        .pb-4 {
+            padding-bottom: 16px;
+        }
+
+        .pb-5 {
+            padding-bottom: 20px;
+        }
+
+        .pb-6 {
+            padding-bottom: 24px;
+        }
+
+        /* Text */
+        .text-normal {
+            font-size: 16px;
+        }
+
+        .text-large {
+            font-size: 20px;
+        }
+
+        .text-xl {
+            font-size: 24px;
+        }
+
+        .text-small {
+            font-size: 12px;
+        }
+
+        .weight-normal {
+            font-weight: 400;
+        }
+
+        .wight-thin {
+            font-weight: 300;
+        }
+
+        .weight-semibold {
+            font-weight: 600;
+        }
+
+        .weight-bold {
+            font-weight: 700;
+        }
+
+        .leading-normal {
+            line-height: 1.5;
+        }
+
+        .leading-relaxed {
+            line-height: 1.625;
+        }
+
+        .leading-loose {
+            line-height: 2;
+        }
+
+
+        /* Border */
+        .border {
+            border: 1px solid whitesmoke;
+        }
+
+        .border-bottom {
+            border-bottom: 1px solid rgb(222, 216, 216);
+        }
+
+        /* Rounded */
+        .rounded {
+            border-radius: 6px;
+        }
+
+        /* Flex */
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .flex-row {
+            flex-direction: row;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .justify-start {
+            justify-content: start;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .justify-end {
+            justify-content: end;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .align-start {
+            align-items: start;
+        }
+
+        .align-center {
+            align-items: center;
+        }
+
+        .align-end {
+            align-items: end;
+        }
+
+        .align-stretch {
+            align-items: stretch;
+        }
+
+        .gap-3 {
+            gap: 12px;
+        }
+
+        .gap-4 {
+            gap: 16px;
+        }
+
+        .gap-5 {
+            gap: 20px;
+        }
+
+        .gap-6 {
+            gap: 24px;
+        }
+
+
+        /* Header Navbar Styles */
+        header nav {
+            padding: 20px 50px;
+            background-color: mediumseagreen;
+            color: white;
+            font-size: 20px;
+        }
+
+        /* Layout Styles */
+        main {
+            width: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: start;
+        }
+
+        /* Sidebar Styles */
+        aside {
+            width: 30%;
+        }
+
+        .main-list {
+            list-style: none;
+            padding: 20px 40px;
+            background-color: whitesmoke;
+        }
+
+        .main-list>li {
+            margin-top: 5px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .main-list>li:hover {
+            color: coral;
+        }
+
+        .main-list>li:not(:first-child) {
+            margin-top: 30px;
+        }
+
+        .sub-list {
+            margin-left: 20px;
+            list-style: none;
+        }
+
+        .sub-list>li {
+            margin-top: 16px;
+            font-size: 16px;
+            color: black;
+        }
+
+        .sub-list>li:hover {
+            color: coral;
+        }
+
+        /* Main Content Styles */
+        #main-body-container {
+            padding-top: 30px;
+            width: 100%;
+            margin: 0 60px;
+        }
+
+        #main-body-container a {
+            color: mediumseagreen;
+        }
+
+        .code {
+            width: 70%;
+            margin-left: 20px;
+            background-color: antiquewhite;
+            padding: 24px;
+            padding-left: 40px;
+            margin-top: 20px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Navbar -->
+    <header>
+        <nav>
+            <h1>Braine</h1>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sidebar -->
+        <aside>
+            <nav>
+                <ul class="main-list">
+                    <li>
+                        Getting Started >
+                        <ul class="sub-list">
+                            <li>
+                                <a href="/#basic-installation">
+                                    Basic Installation
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#emailjs-setup">
+                                    EmailJS Setup
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#file-structure">
+                                    File Structure
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Customization >
+                        <ul class="sub-list">
+                            <li>Typography</li>
+                            <li>Color Schemes</li>
+                            <li>Header</li>
+                            <li>Footer</li>
+                            <li>Navigation</li>
+                            <li>Homepage</li>
+                            <li>About</li>
+                            <li>Contact</li>
+                            <li>Blog</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div id="main-body-container">
+            <!-- Getting Started -->
+            <section id="getting-started">
+                <h2 class="weight-semibold">Documentation</h2>
+
+                <h1 class="mt-4 weight-bold text-large">
+                    Braine - Startup Portfolio Website Template
+                </h1>
+
+                <h4 class="mt-6 pb-6 w-80 weight-normal leading-normal border-bottom">
+                    Thank you for buying our product form themeforest. We hope you like
+                    it. If you have any questions or suggestions, please feel free to
+                    contact us.
+                </h4>
+
+                <div class="w-80 px-6 mt-6">
+                    <div class="flex justify-between align-start">
+                        <h4 class="weight-normal">
+                            <strong>Version:</strong> 1.0
+                        </h4>
+                        <h4 class="weight-normal">
+                            <strong>Created:</strong> 30 Dec, 2024
+                        </h4>
+                    </div>
+                    <div class="mt-5 pb-6">
+                        <h4 class="weight-normal flex justify-start gap-3">
+                            <strong>Author:</strong>
+                            <a href="https://braine.agency/">
+                                Braine
+                            </a>
+                        </h4>
+                    </div>
+                </div>
+
+                <!-- Basic Installation -->
+                <div id="basic-installation" style="margin-top: 40px; border-top: 1px solid rgb(222, 216, 216);">
+                    <h4 class="text-xl weight-semibold mt-6">
+                        Basic Installation
+                    </h4>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        Hello! Welcome to official documentation. Braine - Braine - Startup Portfolio Website Template
+                        is a perfect solution for creatng a professional looking portfolio website for your startup,
+                        agency or any other business. It is build with <strong>Next JS, React JS, Tailwind CSS</strong>.
+                        Lets get started.
+                    </p>
+
+                    <h4 class="text-large weight-semibold mt-6">
+                        Prerequisites
+                    </h4>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        React is built using Node.js, so you will need to have latest version of <a
+                            href="https://nodejs.org/en/">Node.js</a> installed on your machine. <a
+                            href="https://www.npmjs.com/">NPM</a> automatically gets installed with Node.js.
+                    </p>
+
+                    <h4 class="text-large weight-semibold mt-6">
+                        Installing Development Environment
+                    </h4>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        Move to /braine-startup-template (project root) in your terminal/comand prompt. You can aslo
+                        open the project root folder in your vs code editor and open terminal in vs code. Whichever you
+                        prefer. Now run the following command in your terminal/vs code terminal.
+
+                    </p>
+
+                    <div class="code">
+                        <code>npm install</code>
+                    </div>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        This will download and install all the necessary packages listed in the
+                        <code>package.json</code> file. After Installation you should have a
+                        <strong>/node_modules</strong> folder in your project root. Ensure your internet connection is
+                        stable during this process.
+                    </p>
+
+                    <h4 class="text-large weight-semibold mt-6">
+                        How To Run Development Server
+                    </h4>
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        Once dependencies are installed, start the development server with the following command:
+                    </p>
+
+                    <code class="code">
+                        npm run dev
+                    </code>
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        The server will start, and you should see the URL for accessing the project locally in your
+                        terminal (e.g., <code>http://localhost:3000</code>).
+                        Open the url in your favorite browser and you should see a page like this.
+
+
+                    </p>
+
+                    <img src="./assets/website-preview.png" alt="Website preview on browser"
+                        class="mx-6 mt-6 mb-6 w-80">
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        Any changes you make to the code will automatically reflect in the browser, thanks to hot module
+                        reloading.
+                    </p>
+
+                    <h4 class="text-large weight-semibold mt-6">
+                        Env File Setup
+                    </h4>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        Create a file named <strong>.env.local / .env</strong> and copy the contents of the
+                        <strong>.env.example</strong> file into it. We will talk about how to get your email js
+                        credentials used in the env file in the <a href="#emailjs-setup">email js setup section.</a>
+                    </p>
+
+                    <h4 class="text-large weight-semibold mt-6">
+                        Build for Production (Optional)
+                    </h4>
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        When you are ready to deploy the website, generate an optimized production build by running:
+                    </p>
+                    <code class="code">
+                            npm run build
+                        </code>
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        After the build completes, you can preview the production build locally using:
+                    </p>
+                    <code class="code">
+                        npm run start
+                    </code>
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        This command will start a server running the optimized production build. You can now deploy the
+                        website to your favorite hosting service if you want.
+                    </p>
+
+                    <h4 class="text-large weight-semibold mt-6">
+                        Troubleshooting
+                    </h4>
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        If you encounter any issues during installation or setup, ensure the following:
+                    </p>
+                    <ul class="list-disc px-5 text-normal leading-normal mt-4">
+                        <li>Your Node.js version meets the project's requirements (usually the latest LTS version).</li>
+                        <li>You have a stable internet connection for downloading dependencies.</li>
+                        <li>No other application is running on <code>localhost:3000</code>.</li>
+                    </ul>
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        For additional support, you can refer to the <a href="https://nextjs.org/docs">Next.js
+                            documentation</a> or contact us through the support system on ThemeForest.
+                    </p>
+
+                    <h4 class="text-large weight-semibold mt-6">
+                        Congratulations!
+                    </h4>
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        You have successfully set up the <strong>Braine - Startup Portfolio Website Template</strong>.
+                        Enjoy building your professional portfolio!
+                    </p>
+
+                </div>
+
+                <!-- Email JS Setup -->
+                <div id="emailjs-setup" class="pt-6"
+                    style="margin-top: 80px; border-top: 1px solid rgb(222, 216, 216);">
+
+                    <h4 class="text-xl weight-semibold mt-6 pb-6">
+                        EmailJS Setup (For Contact Us Form)
+                    </h4>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        We will set up email js in this step and will use the credentials found in the env file to make
+                        the contact us form work.
+                    </p>
+
+                    <!-- STEP 1 -->
+                    <h4 class="text-large weight-semibold mt-6">
+                        Step-1: Create EmailJS Account
+                    </h4>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        Go to <a href="https://www.emailjs.com/">EmailJS website</a> and create an account using
+                        sign up button. Login to your account and you will see a dashboard like below. (You might not
+                        have any service added at first)
+                    </p>
+
+                    <image src="./assets/emailjs-1.png" alt="EmailJS Dashboard" class="mx-6 mt-6 mb-6 w-70"></image>
+
+                    <!-- STEP 2 -->
+                    <h4 class="text-large weight-semibold mt-6">
+                        Step-2: Add A Service
+                    </h4>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        If you already have a service added, you can click the edit button and skip Step-2. Otherwise,
+                        click on the Add New
+                        Click on the Add New Service button. You will see a window like below. Select You Desired
+                        Option.
+                    </p>
+
+                    <image src="./assets/emailjs-2.png" alt="EmailJS Add New Service" class="mx-6 mt-6 mb-6 w-70">
+                    </image>
+
+                    <!-- STEP 3 -->
+                    <h4 class="text-large weight-semibold mt-6">
+                        Step-3: Add A Service
+                    </h4>
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        In both cases (Edit or add service), you will see a window like below. Connect Your Account
+                        using the connect button. Then copy the service id and paste it in the
+                        <strong>NEXT_PUBLIC_EMAILJS_SERVICE_ID</strong> field in your env file. Then click create
+                        service button to end. (see image below)
+                    </p>
+
+                    <image src="./assets/emailjs-3.png" alt="EmailJS Service Id" class="mx-6 mt-6 mb-6 w-70"></image>
+
+                    <!-- STEP 4 -->
+                    <h4 class="text-large weight-semibold mt-6">
+                        Step-4: Get Your Template Id
+                    </h4>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        Click on the template tab from the left sidebar, you will see a default template like below.
+                        Copy the templated id info from it and paste it in the
+                        <strong>NEXT_PUBLIC_EMAILJS_TEMPLATE_ID</strong> field in your env file. (see the image below)
+                    </p>
+
+                    <img src="./assets/emailjs-4.png" alt="EmailJS Template Id" class="mx-6 mt-6 mb-6 w-70">
+
+                    <!-- STEP 5 -->
+                    <h4 class="text-large weight-semibold mt-6">
+                        Step-5: Get Your Public Key
+                    </h4>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        Click on the account tab from the left sidebar, you will see a window like below. Copy the
+                        public key info from it and paste it in the
+                        <strong>NEXT_PUBLIC_EMAILJS_PUBLIC_KEY</strong> field in your env file. (see the image below)
+                    </p>
+
+                    <img src="./assets/emailjs-5.png" alt="EmailJS Template Id" class="mx-6 mt-6 mb-6 w-70">
+
+                    <!-- STEP 6 -->
+                    <h4 class="text-large weight-semibold mt-6">
+                        Step-6: Edit Your Template (Optional)
+                    </h4>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        You use the default template. If you want you can edit it to your liking by clicking o edit
+                        icon.
+                    </p>
+
+                    <h4 class="text-normal weight-semibold mt-6">
+                        If you face any difficulty, you can contact us through the support system on ThemeForest.
+                    </h4>
+                </div>
+
+                <!-- File Structure -->
+                <div id="file-structure" class="pt-6"
+                    style="margin-top: 80px; border-top: 1px solid rgb(222, 216, 216);">
+                    <h4 class="text-xl weight-semibold mt-6 pb-6">
+                        File Structure
+                    </h4>
+                    <pre>
+                        .
+                        ├── README.md
+                        ├── data
+                        │   └── data.json
+                        ├── next-env.d.ts
+                        ├── next.config.ts
+                        ├── package-lock.json
+                        ├── package.json
+                        ├── postcss.config.mjs
+                        ├── public
+                        │   ├── file.svg
+                        │   ├── globe.svg
+                        │   ├── next.svg
+                        │   ├── vercel.svg
+                        │   ├── videos
+                        │   │   └── video.mp4
+                        │   └── window.svg
+                        ├── src
+                        │   ├── app
+                        │   │   ├── (with-navbar)
+                        │   │   │   ├── blog
+                        │   │   │   │   └── [id]
+                        │   │   │   │       └── page.tsx
+                        │   │   │   ├── layout.tsx
+                        │   │   │   └── page.tsx
+                        │   │   ├── favicon.ico
+                        │   │   ├── globals.css
+                        │   │   └── layout.tsx
+                        │   ├── assets
+                        │   │   ├── aboutImg1.jpg
+                        │   │   ├── aboutImg2.jpg
+                        │   │   ├── animations
+                        │   │   ├── bannerImg1.jpg
+                        │   │   ├── bannerImg2.jpg
+                        │   │   ├── images
+                        │   │   │   ├── blog1.jpg
+                        │   │   │   ├── blog2.jpg
+                        │   │   │   ├── blog3.jpg
+                        │   │   │   ├── gallery11.jpg
+                        │   │   │   ├── gallery12.jpg
+                        │   │   │   ├── gallery13.jpg
+                        │   │   │   ├── gallery14.jpg
+                        │   │   │   ├── team
+                        │   │   │   │   ├── team-1.png
+                        │   │   │   │   ├── team-2.png
+                        │   │   │   │   └── team-3.png
+                        │   │   │   └── web-development.png
+                        │   │   └── svg
+                        │   │       ├── ai-solution.json
+                        │   │       ├── android-development.json
+                        │   │       ├── feature-1.svg
+                        │   │       ├── feature-2.svg
+                        │   │       ├── feature-3.svg
+                        │   │       ├── graygrids-2.svg
+                        │   │       ├── graygrids.svg
+                        │   │       ├── lineicons-2.svg
+                        │   │       ├── lineicons.svg
+                        │   │       ├── plainadmin-2.svg
+                        │   │       ├── plainadmin.svg
+                        │   │       ├── tailadmin-2.svg
+                        │   │       ├── tailadmin.svg
+                        │   │       ├── testimonial-bg.svg
+                        │   │       ├── uideck-2.svg
+                        │   │       ├── uideck.svg
+                        │   │       ├── wave.svg
+                        │   │       └── web-development-1.json
+                        │   ├── components
+                        │   │   ├── BlogCards.tsx
+                        │   │   ├── Buttons
+                        │   │   │   ├── Buttons.tsx
+                        │   │   │   ├── ProjectsButtonGroup.tsx
+                        │   │   │   └── TabButtonsGroup.tsx
+                        │   │   ├── ContactUs.tsx
+                        │   │   ├── Projects
+                        │   │   │   ├── All.tsx
+                        │   │   │   ├── BrandingStrategy.tsx
+                        │   │   │   ├── DigitalExperiences.tsx
+                        │   │   │   └── Ecommerce.tsx
+                        │   │   ├── Service.tsx
+                        │   │   ├── TeamMember.tsx
+                        │   │   ├── Testimonial.tsx
+                        │   │   ├── TypeWriter
+                        │   │   │   └── TypeWriter.tsx
+                        │   │   ├── Typography
+                        │   │   │   ├── Heading.tsx
+                        │   │   │   ├── Subheading.tsx
+                        │   │   │   └── Title.tsx
+                        │   │   ├── VideoImage.tsx
+                        │   │   ├── sections
+                        │   │   │   ├── AboutUs.tsx
+                        │   │   │   ├── Banner.tsx
+                        │   │   │   ├── Blogs.tsx
+                        │   │   │   ├── Footer.tsx
+                        │   │   │   ├── OurTeam.tsx
+                        │   │   │   ├── Portfolio.tsx
+                        │   │   │   ├── Services.tsx
+                        │   │   │   ├── Support.tsx
+                        │   │   │   ├── Testimonials.tsx
+                        │   │   │   └── TrustedBy.tsx
+                        │   │   └── shared
+                        │   │       ├── Navbar.tsx
+                        │   │       └── SectionHeader.tsx
+                        │   ├── hooks
+                        │   │   ├── useIsInViewport.tsx
+                        │   │   └── usePathName.tsx
+                        │   ├── providers
+                        │   │   └── PathNameProvider.tsx
+                        │   └── types
+                        │       ├── sectionHeader.ts
+                        │       └── typography.ts
+                        ├── tailwind.config.ts
+                        └── tsconfig.json
+                    </pre>
+
+                    <p class="mt-4">
+                        <strong>
+                            Note: You might see some of the folders and files missing before you complete the
+                            installation.
+                        </strong>
+                    </p>
+                </div>
+
+
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>
