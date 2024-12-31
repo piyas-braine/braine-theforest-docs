@@ -14,6 +14,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
+            scroll-behavior: smooth;
         }
 
         a {
@@ -154,6 +155,10 @@
             padding-bottom: 24px;
         }
 
+        .pb-10 {
+            padding-bottom: 40px;
+        }
+
         /* Text */
         .text-normal {
             font-size: 16px;
@@ -202,7 +207,11 @@
 
         /* Border */
         .border {
-            border: 1px solid whitesmoke;
+            border: 1px solid rgb(222, 216, 216);
+        }
+
+        .border-top {
+            border-top: 1px solid rgb(222, 216, 216);
         }
 
         .border-bottom {
@@ -279,13 +288,16 @@
             gap: 24px;
         }
 
-
         /* Header Navbar Styles */
         header nav {
             padding: 20px 50px;
             background-color: mediumseagreen;
             color: white;
             font-size: 20px;
+            position: fixed;
+            top: 0px;
+            z-index: 10;
+            width: 100%;
         }
 
         /* Layout Styles */
@@ -293,18 +305,25 @@
             width: 100%;
             display: flex;
             justify-content: start;
-            align-items: start;
         }
 
         /* Sidebar Styles */
         aside {
-            width: 30%;
+            width: 25%;
+            height: 100%;
+            position: fixed;
+            z-index: 5;
+            top: 0px;
+            background-color: whitesmoke;
+        }
+
+        aside nav {
+            padding-top: 80px;
         }
 
         .main-list {
             list-style: none;
             padding: 20px 40px;
-            background-color: whitesmoke;
         }
 
         .main-list>li {
@@ -339,8 +358,9 @@
         /* Main Content Styles */
         #main-body-container {
             padding-top: 30px;
-            width: 100%;
+            width: 65%;
             margin: 0 60px;
+            transform: translate(40%, 1%);
         }
 
         #main-body-container a {
@@ -366,7 +386,7 @@
     <!-- Header Navbar -->
     <header>
         <nav>
-            <h1>Braine</h1>
+            <h1 class="weight-bold" style="font-size: 36px;">Braine</h1>
         </nav>
     </header>
 
@@ -398,15 +418,81 @@
                     <li>
                         Customization >
                         <ul class="sub-list">
-                            <li>Typography</li>
-                            <li>Color Schemes</li>
-                            <li>Header</li>
-                            <li>Footer</li>
-                            <li>Navigation</li>
-                            <li>Homepage</li>
-                            <li>About</li>
-                            <li>Contact</li>
-                            <li>Blog</li>
+                            <li>
+                                <a href="/#color-pallete">
+                                    Color Palette
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#typography">
+                                    Typography & Base Styles
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#logo">
+                                    Logo
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#navbar">
+                                    Navbar
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#footer">
+                                    Footer
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#home">
+                                    Homepage
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#banner">
+                                    Banner
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#about">
+                                    About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#services">
+                                    Services
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#team">
+                                    Our Team
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#portfolio">
+                                    Portfolio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#testimonials">
+                                    Testimonials
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#trustedby">
+                                    Trusted By
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#blogs">
+                                    Blogs
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#support">
+                                    Support
+                                </a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -419,7 +505,7 @@
             <section id="getting-started">
                 <h2 class="weight-semibold">Documentation</h2>
 
-                <h1 class="mt-4 weight-bold text-large">
+                <h1 class="mt-4 weight-bold" style="font-size: 32px;">
                     Braine - Startup Portfolio Website Template
                 </h1>
 
@@ -429,7 +515,7 @@
                     contact us.
                 </h4>
 
-                <div class="w-80 px-6 mt-6">
+                <div class="w-80 px-6 mt-6 pb-3 border-bottom">
                     <div class="flex justify-between align-start">
                         <h4 class="weight-normal">
                             <strong>Version:</strong> 1.0
@@ -449,7 +535,7 @@
                 </div>
 
                 <!-- Basic Installation -->
-                <div id="basic-installation" style="margin-top: 40px; border-top: 1px solid rgb(222, 216, 216);">
+                <div id="basic-installation" class="pb-10 border-bottom" style="padding-top: 80px;">
                     <h4 class="text-xl weight-semibold mt-6">
                         Basic Installation
                     </h4>
@@ -576,8 +662,7 @@
                 </div>
 
                 <!-- Email JS Setup -->
-                <div id="emailjs-setup" class="pt-6"
-                    style="margin-top: 80px; border-top: 1px solid rgb(222, 216, 216);">
+                <div id="emailjs-setup" class="pb-10 border-bottom" style="padding-top: 80px;">
 
                     <h4 class="text-xl weight-semibold mt-6 pb-6">
                         EmailJS Setup (For Contact Us Form)
@@ -671,8 +756,7 @@
                 </div>
 
                 <!-- File Structure -->
-                <div id="file-structure" class="pt-6"
-                    style="margin-top: 80px; border-top: 1px solid rgb(222, 216, 216);">
+                <div id="file-structure" class="pb-10 border-bottom" style="padding-top: 80px;">
                     <h4 class="text-xl weight-semibold mt-6 pb-6">
                         File Structure
                     </h4>
@@ -798,8 +882,304 @@
                         </strong>
                     </p>
                 </div>
+            </section>
+
+            <section id="customization">
+
+                <h2 style="padding-top: 100px; font-size: 28px; font-weight: 600;">
+                    Customization
+                </h2>
+
+                <!-- Color Pallete -->
+                <div id="color-pallete" class="pb-10 border-bottom" style="padding-top: 100px;">
+                    <h4 class="text-xl weight-semibold pb-6">
+                        Color Palette Customization
+                    </h4>
+
+                    <image src="./assets/color-pallete.png" alt="Color Pallate" class="mx-6 mt-6 mb-6 w-70"></image>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        Styling is done using Tailwind CSS. These are are the majors colors used in the template. You
+                        can find them in <strong>tailwind.config.ts</strong> file. You can customize them to your
+                        liking.
+                        There is also a dark mode option. You can also change the color of the dark mode to your liking.
+                        To change the dark color you have to replace colors used in the dark: classes in the html
+                        elements/tags. You can change non-majors colors directly in the element where they are used.
+                    </p>
+                </div>
+
+                <!-- Typography -->
+                <div id="typography" class="pb-10 border-bottom" style="padding-top: 80px;">
+                    <h4 class="text-xl weight-semibold mt-6 pb-6">
+                        Typography & Base Styles Customization
+                    </h4>
+
+                    <image src="./assets/typography.png" alt="Typography" class="mx-6 mt-6 mb-6 w-70"></image>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        Lexend is used as font in this website. You can import another font from google fonts and use
+                        it. You can also change the base styles used for this template by going to
+                        <strong>/src/app/global.css</strong> file.
+                    </p>
+                </div>
+
+                <!-- Logo -->
+                <div id="logo" class="pb-10 border-bottom" style="padding-top: 80px;">
+                    <h4 class="text-xl weight-semibold mt-6 pb-6">
+                        Logo Customization
+                    </h4>
+
+                    <image src="./assets/logo.png" alt="Typography" class="mx-6 mt-6 mb-6 w-70"></image>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        You can also customize the <strong>logo text</strong> by changing text of Brand portion's Link
+                        tag. You can also place a <strong>logo image</strong> of your company with logo text inside the
+                        Link tag. You can find this portion of code in the
+                        <strong>/src/components/shared/Navbar.tsx</strong> file.
+                    </p>
+                </div>
+
+                <!-- Navbar -->
+                <div id="navbar" class="pb-10 border-bottom" style="padding-top: 80px;">
+                    <h4 class="text-xl weight-semibold mt-6 pb-6">
+                        Navbar Customization
+                    </h4>
+
+                    <image src="./assets/navbar.png" alt="Navbar" class="mx-6 mt-6 mb-6 w-70"></image>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        You can customize the navbar by going to <strong>/src/components/shared/Navbar.tsx</strong>
+                        file.
+                        To change a
+                        navbar item you have the change the text between the Link tag eg: About(as seen in the image).
+                        You can change the url/link in the href attribute of the Link tag. If you change the link/url in
+                        href attribute make sure to update their ids in their corresponding components. For Example if
+                        you change the about url/link of About, you have to update id of it in the about component
+                        (AboutUS.tsx) to ensure on click it takes to the correct section of the website/page.
+                        <br />
+                        <br />
+                        Apart from this, you can also change the url of <strong>LinkedIn button</strong> of the navbar
+                        to your company's LinkedIn page.
+                    </p>
+                </div>
+
+                <!-- Footer -->
+                <div id="footer" class="pb-10 border-bottom" style="padding-top: 80px;">
+                    <h4 class="text-xl weight-semibold mt-6 pb-6">
+                        Footer Customization
+                    </h4>
+
+                    <image src="./assets/footer.png" alt="Footer" class="mx-6 mt-6 mb-6 w-70"></image>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        Like the navbar, you can customize the brand text / logo in the footer. You can link your social
+                        media account using the icon's link tags. You can also customize the copyright text and the year
+                        in the footer. You can replace the contact information with your own contact information. And of
+                        course you can link additional web pages here your privacy policy, terms and conditions, etc.
+                        (by changing the href attribute of the link tag). You can customize the footer by going to
+                        <strong>/src/components/sections/Footer.tsx</strong> file.
+                    </p>
+                </div>
+
+                <!-- Homepage -->
+                <div id="home" class="pb-10 border-bottom" style="padding-top: 80px;">
+                    <h4 class="text-xl weight-semibold mt-6 pb-6">
+                        Homepage Customization
+                    </h4>
+
+                    <image src="./assets/home.png" alt="Footer" class="mx-6 mt-6 mb-6 w-70"></image>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        You can customize the order of the section in the template from this page. If you want to add
+                        any extra section you can also do it here. You can customize the footer by going to
+                        <strong>/src/app/(with-navbar)/page.tsx</strong> file.
+                    </p>
+                </div>
+
+                <!-- Banner -->
+                <div id="home" class="pb-10 border-bottom" style="padding-top: 80px;">
+                    <h4 class="text-xl weight-semibold mt-6 pb-6">
+                        Banner Section Customization
+                    </h4>
+
+                    <image src="./assets/banner-1.png" alt="Banner 1" class="mx-6 mt-6 mb-6 w-70"></image>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        You can customize the typewriting text of the banner by changing the words of values attribute
+                        in the TypeWriter tag (as seen in the image). You can also change other texts of the banner. You
+                        can customize the banner by going to
+                        <strong>/src/components/sections/Banner.tsx</strong> file.
+                    </p>
+
+                    <image src="./assets/banner-2.png" alt="Banner 2" class="mx-6 mt-6 mb-6 w-70"></image>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        You can change the video of banner by changing the src of the video and replacing it with the
+                        video you want. Just make sure to place the video file in <strong>/public/videos</strong> folder
+                        of the project. You can also change the background image of the banner by changing the src
+                        attribute of the image tag. You can
+                        can customize these by going to
+                        <strong>/src/components/VideoImage.tsx</strong> file.
+                    </p>
+                </div>
 
 
+                <div id="services" class="pb-10 border-bottom" style="padding-top: 80px;">
+                    <h4 class="text-xl weight-semibold mt-6 pb-6">
+                        Services Section Customization
+                    </h4>
+
+                    <image src="./assets/services.png" alt="Services" class="mx-6 mt-6 mb-6 w-70"></image>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        If you want to update the services cards of this template, you can do it by replacing the
+                        animation, title, and description attribute value of the Service tag/component. (as seen in the
+                        image)> You can also add more services by adding/calling Service tag/component with the above
+                        mentioned attributes. You can customize the services section by going to
+                        <strong>/src/components/sections/Services.tsx</strong> file.
+                        <br />
+                        <br />
+
+                        You can also customize the Title, Heading and Sub Heading of the Services section by changing
+                        the values of titleText, headingText and subHeadingText attributes of the
+                        <strong>SectionHeader</strong>
+                        tag/component. (as seen in the image).
+                    </p>
+                </div>
+
+                <div id="about" class="pb-10 border-bottom" style="padding-top: 80px;">
+                    <h4 class="text-xl weight-semibold mt-6 pb-6">
+                        About Us Section Customization
+                    </h4>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        You can customized the images by changing the src attribute of the image tag. You can also
+                        change the texts of About Us, Mission, Vision by updating their texts inside the
+                        <strong>getTabContent()</strong> function of the <strong>AboutUs.tsx</strong> file. You will
+                        find the About Us section in the
+                        <strong>/src/components/sections/AboutUs.tsx</strong> file.
+                        <br />
+                        <br />
+
+                        You can also customize the Title, Heading and Sub Heading of the About Us section by changing
+                        the values of titleText, headingText and subHeadingText attributes of the
+                        <strong>SectionHeader</strong>
+                        tag/component.
+                    </p>
+                </div>
+
+                <!-- Our Team -->
+                <div id="team" class="pb-10 border-bottom" style="padding-top: 80px;">
+                    <h4 class="text-xl weight-semibold mt-6 pb-6">
+                        Our Team Section Customization
+                    </h4>
+
+                    <image src="./assets/team.png" alt="Our Team" class="mx-6 mt-6 mb-6 w-70"></image>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        If you want to update the team card or the information of the team member of this template, you
+                        can do it by replacing the image, name, role, email, linkedinLink and githubLink attribute value
+                        of the TeamMember tag/component with your own values. (as seen in the
+                        image) You can also add more team members by adding/calling TeamMember tag/component with the
+                        above
+                        mentioned attributes. You can customize the Our Team section by going to
+                        <strong>/src/components/sections/OurTeam.tsx</strong> file.
+                        <br />
+                        <br />
+
+                        You can also customize the Title, Heading and Sub Heading of the Our Team section by changing
+                        the values of titleText, headingText and subHeadingText attributes of the
+                        <strong>SectionHeader</strong>
+                        tag/component. (as seen in the image).
+                    </p>
+                </div>
+
+                <!-- Portfolio -->
+                <div id="portfolio" class="pb-10 border-bottom" style="padding-top: 80px;">
+                    <h4 class="text-xl weight-semibold mt-6 pb-6">
+                        Portfolio Section Customization
+                    </h4>
+
+                    <image src="./assets/portfolio.png" alt="Portfolio" class="mx-6 mt-6 mb-6 w-70"></image>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        In the portfolio section you can change the projects of each category by going to their
+                        respective component like All.tsx, BrandingStrategy.tsx etc. If you want to update a specific
+                        project of a category, you can do it by updating name, image src, category text. (as seen in the
+                        image). You can also change category names if you want. You can customize the Portfolio section
+                        by going to
+                        <strong>/src/components/sections/Portfolio.tsx</strong> file and then going to category
+                        components.
+                    </p>
+                </div>
+
+                <!-- Testimonials -->
+                <div id="testimonials" class="pb-10 border-bottom" style="padding-top: 80px;">
+                    <h4 class="text-xl weight-semibold mt-6 pb-6">
+                        Testimonials Section Customization
+                    </h4>
+
+                    <image src="./assets/testimonials.png" alt="Testimonials" class="mx-6 mt-6 mb-6 w-70"></image>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        If you want to update the testimonial card or the information of a testimonial of this template,
+                        you
+                        can do it by replacing the feedbackText, name, role, and img attribute value
+                        of the Testimonial tag/component with your own values. (as seen in the
+                        image) You can also add more testimonials by adding/calling Testimonial tag/component with the
+                        above
+                        mentioned attributes. You can customize the Testimonials section by going to
+                        <strong>/src/components/sections/Testimonials.tsx</strong> file.
+                        <br />
+                        <br />
+
+                        You can also customize the Title, Heading and Sub Heading of the Testimonials section by
+                        changing
+                        the values of titleText, headingText and subHeadingText attributes of the
+                        <strong>SectionHeader</strong>
+                        tag/component. (as seen in the image).
+                    </p>
+                </div>
+
+                <div id="trustedby" class="pb-10 border-bottom" style="padding-top: 80px;">
+                    <h4 class="text-xl weight-semibold mt-6 pb-6">
+                        Trusted By Section Customization
+                    </h4>
+
+                    <image src="./assets/trustedby.png" alt="Trusted By" class="mx-6 mt-6 mb-6 w-70"></image>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        You can change the brands of the Trusted by section by replacing the current brand images with
+                        the new brand images. You can customize the Trusted By section by going to
+                        <strong>/src/components/sections/TrustedBy.tsx</strong> file.
+                    </p>
+                </div>
+
+                <!-- Blogs -->
+                <div id="blogs" class="pb-10 border-bottom" style="padding-top: 80px;">
+                    <h4 class="text-xl weight-semibold mt-6 pb-6">
+                        Blogs Section Customization
+                    </h4>
+
+                    <image src="./assets/blogs.png" alt="Trusted By" class="mx-6 mt-6 mb-6 w-70"></image>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        If you want to change the blog secton of this template you can update in the <strong>/data/data.json</strong> file. (as seen in the image) You can customize the blog images and other texts in the <strong>/src/components/sections/Blogs.tsx</strong> file.
+                    </p>
+                </div>
+
+                 <!-- Support -->
+                 <div id="support" class="pb-10 border-bottom" style="padding-top: 80px;">
+                    <h4 class="text-xl weight-semibold mt-6 pb-6">
+                        Support Section Customization
+                    </h4>
+
+                    <image src="./assets/blogs.png" alt="Trusted By" class="mx-6 mt-6 mb-6 w-70"></image>
+
+                    <p class="mt-5 px-3 text-normal leading-normal">
+                        You can customize support email, office location and other links by going to <strong>/src/components/sections/Support.tsx</strong> file.
+                    </p>
+                </div>
             </section>
         </div>
     </main>
